@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Richard Boakye Yiadom</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #0E1E2A;
+      color: #F5F5F5;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .navbar a {
+      color: #F5F5F5;
+      margin-right: 1.2em;
+      text-decoration: none;
+    }
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4em 2em;
+      flex-wrap: wrap;
+    }
+    .hero img {
+      max-width: 300px;
+      border-radius: 10px;
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      color: #FFD700;
+    }
+    .hero p {
+      font-size: 1.1em;
+      max-width: 500px;
+    }
+    .btn-custom {
+      background-color: #FFD700;
+      color: #0E1E2A;
+      padding: 0.7em 1.5em;
+      border: none;
+      margin-top: 1em;
+    }
+
+    /* Consistent font family for the entire page */
+body, h1, h2, h3, h4, h5, h6, p, button, a {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Normalize font sizes */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+p, .lead { font-size: 1rem; }
+
+/* Buttons and navbar links */
+button, .btn-custom, .navbar a {
+  font-size: 1rem;
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg" style="background-color: #05445E; padding: 1em;">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fw-bold" href="index.html">Boakye Richard Yiadom</a>
+      <ul class="navbar-nav ms-auto d-flex flex-row gap-4">
+        <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="About.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="Contacts.html">Contacts</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+<section class="hero" style="padding: 5em 2em; background: linear-gradient(to right, #0F2027, #203A43, #2C5364); color: #F0F0F0; text-align: center;">  <div class="container">
+    <h1 style="font-size: 3em; font-weight: bold; margin-bottom: 0.5em;">
+      Empowering Education & Healthcare
+    </h1>
+
+    <p style="font-size: 1.25em; max-width: 750px; margin: 0 auto 2em;">
+      Through code, vision, and community building, I design systems that drive meaningful change—like
+      <strong><a href="bloodbridge.html" style=" color: #F0F0F0; text-decoration: underline;">BloodBridge</a></strong>
+      and <strong><a href="Scholar.html" style="color: #F0F0F0; text-decoration: underline;">Scholar</a></strong>.
+    </p>
+
+    <a href="#projects" class="btn-custom" style="display: inline-block; padding: 0.8em 2em; background-color: #05445E; color: #F5F5F5; border-radius: 5px; font-weight: 600; text-decoration: none; transition: background-color 0.3s ease;">
+      <i data-feather="compass" style="vertical-align: middle; margin-right: 8px;"></i> Explore My Projects
+    </a>
+  </div>
+</section>
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects text-center">
+    <h2>Projects</h2>
+
+    <div id="ProjectCarousel" class="carousel slide mb-5" data-bs-ride="carousel" aria-label="Project Highlights">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="card mx-auto shadow-sm border-0" style="max-width: 600px;">
+            <div class="card-body">
+              <h3>BloodBridge</h3>
+              <p class="text-muted">Reimagining blood donation and tracking in Ghana with tech-driven efficiency.</p>
+              <a href="bloodbridge.html" class="btn btn-outline-primary">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="card mx-auto shadow-sm border-0" style="max-width: 600px;">
+            <div class="card-body">
+              <h3>Scholar</h3>
+              <p class="text-muted">A modular school management system built for seamless admin and student interaction.</p>
+              <a href="Scholar.html" class="btn btn-outline-primary">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="card mx-auto shadow-sm border-0" style="max-width: 600px;">
+            <div class="card-body">
+              <h3>STEAM Robotics Outreach</h3>
+              <p class="text-muted">Empowering young learners through creative robotics kits and workshops.</p>
+              <a href="robots.html" class="btn btn-outline-primary">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#ProjectCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#ProjectCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+<section class="skills text-center" style="
+  padding: 4em 2em;
+  background: linear-gradient(120deg, #05445E, #189AB4);
+  color: #F5F5F5;
+">
+  <h2 style="font-size: 2.5rem; margin-bottom: 1.5em;">
+    <i data-feather="tool" style="vertical-align: middle; margin-right: 10px;"></i> 
+    My Tech Toolbox
+  </h2>
+  <div style="
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+  ">
+    <span class="badge bg-light text-dark px-3 py-2 fw-semibold rounded-pill">HTML</span>
+    <span class="badge bg-light text-dark px-3 py-2 fw-semibold rounded-pill">CSS</span>
+    <span class="badge bg-light text-dark px-3 py-2 fw-semibold rounded-pill">JavaScript</span>
+    <span class="badge bg-light text-dark px-3 py-2 fw-semibold rounded-pill">ASP.NET Core</span>
+    <span class="badge bg-light text-dark px-3 py-2 fw-semibold rounded-pill">Firebase</span>
+    <span class="badge bg-light text-dark px-3 py-2 fw-semibold rounded-pill">Database Design</span>
+    <span class="badge bg-light text-dark px-3 py-2 fw-semibold rounded-pill">UI/UX</span>
+    <span class="badge bg-light text-dark px-3 py-2 fw-semibold rounded-pill">STEAM Robotics</span>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="text-center py-4" style="font-family: 'Segoe UI', sans-serif; font-size: 1rem;">
+  <p>&copy; 2025 Richard Boakye Yiadom</p>
+
+  <p>
+    <strong><i data-feather="mail"></i> Email:</strong> richardboakye1710@gmail.com &nbsp;|&nbsp;
+    <strong><i data-feather="github"></i> GitHub:</strong> 
+    <a href="https://github.com/rby122" target="_blank" style="text-decoration: none;">rby122</a>
+  </p>
+
+  <p>
+    <i data-feather="map-pin"></i> Ashanti Region, Ghana
+  </p>
+
+  <div class="social-icons mt-3" style="font-size: 1.2rem;">
+  <a href="https://www.facebook.com/me/" target="_blank" class="me-3" aria-label="Facebook">
+    <i class="fab fa-facebook"></i>
+  </a>
+  <a href="https://wa.me/233596833199" target="_blank" class="me-3" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://x.com/RICHARD35250961" target="_blank" class="me-3" aria-label="Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.instagram.com/richar_d_estiny" target="_blank" class="me-3" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/richard-boakye-08bb19266" target="_blank" aria-label="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+</div>
+
+</footer>
+
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    window.addEventListener('load', () => feather.replace());
+  </script>
+</body>
+</html>

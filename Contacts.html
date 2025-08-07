@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Richard Boakye Yiadom</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #0E1E2A;
+      color: #F5F5F5;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .navbar a {
+      color: #F5F5F5;
+      margin-right: 1.2em;
+      text-decoration: none;
+    }
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4em 2em;
+      flex-wrap: wrap;
+    }
+    .hero img {
+      max-width: 300px;
+      border-radius: 10px;
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      color: #FFD700;
+    }
+    .hero p {
+      font-size: 1.1em;
+      max-width: 500px;
+    }
+    .btn-custom {
+      background-color: #FFD700;
+      color: #0E1E2A;
+      padding: 0.7em 1.5em;
+      border: none;
+      margin-top: 1em;
+    }
+
+
+    ::placeholder {
+  color: #CCCCCC;
+  opacity: 1;
+}
+
+    /* Consistent font family for the entire page */
+body, h1, h2, h3, h4, h5, h6, p, button, a {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Normalize font sizes */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+p, .lead { font-size: 1rem; }
+
+/* Buttons and navbar links */
+button, .btn-custom, .navbar a {
+  font-size: 1rem;
+}
+.btn-custom {
+  background-color: #FFD700;
+  color: #0E1E2A;
+  font-weight: bold;
+  border: none;
+  padding: 0.6em 1.4em;
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg" style="background-color: #05445E; padding: 1em;">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white fw-bold" href="index.html">Boakye Richard Yiadom</a>
+      <ul class="navbar-nav ms-auto d-flex flex-row gap-4">
+        <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="About.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="Contacts.html">Contacts</a></li>
+      </ul>
+    </div>
+  </nav>
+ 
+
+<!-- Contact Section -->
+<section id="contact" style="background-color: #0E1E2A; color: #F5F5F5; padding: 4em 2em;">
+  <div class="container">
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <h2 class="text-warning" style="font-size: 2.5rem;">
+        <i data-feather="send" class="me-2"></i> Let's Connect
+      </h2>
+      <p class="lead">
+        Whether you're into education, data, healthcare tech, or robotics, I'm open to all collaborations and conversations.
+      </p>
+    </div>
+
+    <div class="row align-items-center">
+      <!-- Contact Form -->
+      <div class="col-lg-6 mb-5">
+        <form>
+          <div class="mb-3">
+            <input type="text" class="form-control bg-dark text-white border-secondary" 
+                   placeholder="Your Name" required aria-label="Your Name">
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control bg-dark text-white border-secondary" 
+                   placeholder="Your Email" required aria-label="Your Email">
+          </div>
+          <div class="mb-3">
+            <input type="tel" class="form-control bg-dark text-white border-secondary" 
+                   placeholder="Your Phone" aria-label="Your Phone">
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control bg-dark text-white border-secondary" 
+                   placeholder="Subject" required aria-label="Subject">
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control bg-dark text-white border-secondary" rows="5" 
+                      placeholder="Your Message" required aria-label="Your Message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-warning w-100">
+            <i data-feather="send" class="me-2"></i> Submit
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-6 ps-lg-5">
+        <div class="mb-3">
+          <i data-feather="map-pin" class="me-2" style="stroke: #FFD700;"></i>
+          <strong>Address:</strong> Tanoso-Kumasi AK-741-5611
+        </div>
+        <div class="mb-3">
+          <i data-feather="mail" class="me-2" style="stroke: #FFD700;"></i>
+          <strong>Email:</strong>
+          <a href="mailto:richardboakye1710@gmail.com" class="text-warning text-decoration-none">
+            richardboakye1710@gmail.com
+          </a>
+        </div>
+        <div class="mb-3">
+          <i data-feather="phone" class="me-2" style="stroke: #FFD700;"></i>
+          <strong>Phone:</strong>
+          <a href="tel:+233596833199" class="text-warning text-decoration-none">
+            0596833199
+          </a>
+        </div>
+        <div class="mb-3">
+          <i data-feather="github" class="me-2" style="stroke: #FFD700;"></i>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/rby122" target="_blank" class="text-warning text-decoration-none">
+            rby122
+          </a>
+        </div>
+        <div class="mb-3">
+          <i data-feather="linkedin" class="me-2" style="stroke: #FFD700;"></i>
+          <strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/in/richard-boakye-08bb19266" target="_blank" rel="noopener noreferrer" class="text-warning text-decoration-none">
+            linkedin.com/in/richard-boakye-08bb19266
+          </a>
+        </div>
+        <div class="mb-3">
+          <i data-feather="globe" class="me-2" style="stroke: #FFD700;"></i>
+          <strong>Region:</strong> Ashanti Region, Ghana
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- Footer -->
+<footer class="text-center py-4" style="font-family: 'Segoe UI', sans-serif; font-size: 1rem;">
+  <p>&copy; 2025 Richard Boakye Yiadom</p>
+
+  <p>
+    <strong><i data-feather="mail"></i> Email:</strong> richardboakye1710@gmail.com &nbsp;|&nbsp;
+    <strong><i data-feather="github"></i> GitHub:</strong> 
+    <a href="https://github.com/rby122" target="_blank" style="text-decoration: none;">rby122</a>
+  </p>
+
+  <p>
+    <i data-feather="map-pin"></i> Ashanti Region, Ghana
+  </p>
+
+  <div class="social-icons mt-3" style="font-size: 1.2rem;">
+    <a href="https://facebook.com/YourProfile" target="_blank" class="me-3"><i class="fab fa-facebook"></i></a>
+    <a href="https://wa.me/233596833199" target="_blank" class="me-3"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://x.com/YourProfile" target="_blank" class="me-3"><i class="fab fa-twitter"></i></a>
+    <a href="https://instagram.com/YourProfile" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+  
+  <!-- Activate Feather Icons -->
+<script>
+  feather.Replace();
+</script>
+
+</body>
+</html>
