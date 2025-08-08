@@ -23,22 +23,32 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">BloodBridge</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="../Dashboard.html">Dashboard</a></li>
-        <li class="nav-item"><a class="nav-link" href="../Donate.html">Donate</a></li>
-        <li class="nav-item"><a class="nav-link" href="../Forum.html">Forum</a></li>
-        <li class="nav-item"><a class="nav-link" href="../AboutUs.html">About</a></li>
-      </ul>
+    
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+        <img src="assets/logo.jpg" alt="BloodBridge Logo" width="40" class="me-2" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="Support.html">Support</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="AboutUs.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="Privacy.html">Privacy</a></li>
+        </ul>
+        <div class="d-flex">
+          <a href="signup.html" class="btn btn-outline-light me-2">Sign Up</a>
+          <a href="signin.html" class="btn btn-light">Sign In</a>
+        </div>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
     <!-- ✅ Hero Section -->
     <header class="hero text-center py-5 text-white bloodbridge-hero-bg">
