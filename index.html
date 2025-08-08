@@ -1,35 +1,79 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page - BloodBridge</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BloodBridge</title>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/site.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="../../js/site.js"></script>
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/css/dashboard.css" asp-append-version="true" />
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="~/js/site.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="~/images/favicon.ico" type="image/x-icon" />
 </head>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">BloodBridge</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">BloodBridge</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+    </div>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="../Dashboard.html">Dashboard</a></li>
-        <li class="nav-item"><a class="nav-link" href="../Donate.html">Donate</a></li>
-        <li class="nav-item"><a class="nav-link" href="../Forum.html">Forum</a></li>
-        <li class="nav-item"><a class="nav-link" href="../About.html">About</a></li>
-      </ul>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo.jpg" alt="BloodBridge Logo" width="40" />
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Support">Support Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="AboutUs">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <span class="navbar-text me-2">Welcome, @User.Identity.Name</span>
+                            <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-danger">Log Out</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <a asp-controller="Account" asp-action="SignUp" class="btn btn-outline-danger me-2">Sign Up</a>
+                            <a asp-controller="Account" asp-action="SignIn" class="btn btn-danger">Sign In</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </nav>
     </div>
   </div>
 </nav>
@@ -261,16 +305,70 @@
   }
 </script>
 
-<footer class="bg-danger text-white text-center py-3 mt-5">
-  <div class="container">
-    <small>
-      &copy; 2025 BloodBridge &middot; 
-      <a href="../About.html" class="text-white text-decoration-underline">About</a> &middot; 
-      <a href="../Contact.html" class="text-white text-decoration-underline">Contact</a> &middot; 
-      <a href="../Terms.html" class="text-white text-decoration-underline">Terms</a>
-    </small>
-  </div>
+
+
+    <!-- ✅ Footer placed outside container-fluid to prevent overlap -->
+<footer class="footer bg-dark text-white text-center py-3">
+    <div class="container">
+        <div class="row d-flex flex-wrap justify-content-center text-md-start">
+            <div class="col-md-4 mb-3">
+                <h5>About Us</h5>
+                <p>BloodBridge connects blood donors with recipients efficiently.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Useful Links</h5>
+                <nav>
+                    <ul class="list-unstyled">
+                        <li><a class="text-white opacity-75" asp-controller="Home" asp-action="AboutUs">About</a></li>
+                        <li><a class="text-white opacity-75" asp-controller="Home" asp-action="Privacy">Privacy Policy</a></li>
+                        <li><a class="text-white opacity-75" asp-controller="Home" asp-action="Support">Support Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Contact Info -->
+            <div class="col-md-4 mb-3">
+                <h5>Get in Touch</h5>
+                <p><i data-feather="map-pin"></i> Kumasi, Ghana</p>
+                <p><i data-feather="phone"></i> <a class="text-white opacity-75" href="tel:+2330596833199">+233 059 683 3199</a></p>
+                <p><i data-feather="mail"></i> <a class="text-white opacity-75" href="mailto:richardboakye1710@gmail.com">richardboakye1710@gmail.com</a></p>
+                <!-- Optional Socials -->
+                <div class="mt-2">
+                   <!-- 🌐 Social Media Links -->
+<a href="https://facebook.com/YourProfile" target="_blank" rel="noopener" class="text-white me-3" aria-label="Facebook">
+  <i data-feather="facebook"></i>
+</a>
+
+<a href="https://wa.me/233596833199" target="_blank" rel="noopener" class="text-white me-3" aria-label="WhatsApp">
+  <i data-feather="message-circle"></i>
+</a>
+
+<a href="https://x.com/YourProfile" target="_blank" rel="noopener" class="text-white me-3" aria-label="X (formerly Twitter)">
+  <i data-feather="twitter"></i>
+</a>
+
+<a href="https://instagram.com/YourProfile" target="_blank" rel="noopener" class="text-white" aria-label="Instagram">
+  <i data-feather="instagram"></i>
+</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p>&copy; @DateTime.Now.Year BloodBridge. All Rights Reserved.</p>
+        </div>
+    </div>
 </footer>
+
+
+
+<script>feather.replace()</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+
 
 </body>
 </html>
