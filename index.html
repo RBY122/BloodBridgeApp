@@ -4,12 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BloodBridge</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="site.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.css" />
-  <link rel="stylesheet" href="site.js"/>
+  <!-- Bootstrap 5 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-..." crossorigin="anonymous" />
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-..." crossorigin="anonymous" />
+
+<!-- Feather Icons -->
+<link rel="icon" type="image/x-icon" href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha384-..." crossorigin="anonymous" />
+
+<!-- Custom Styles -->
+<link rel="stylesheet" href="site.css" />
+
 </head>
+
+
+
+
 <body class="bg-light">
 
   <!-- Navbar -->
@@ -31,8 +42,8 @@
         <li class="nav-item"><a class="nav-link text-white" href="Privacy.html">Privacy</a></li>
         </ul>
         <div class="d-flex">
-          <a href="/signup.html" class="btn btn-outline-light me-2">Sign Up</a>
-          <a href="/signin.html" class="btn btn-light">Sign In</a>
+          <a href="SignUp.html" class="btn btn-outline-light me-2">Sign Up</a>
+          <a href="SignIn.html" class="btn btn-light">Sign In</a>
         </div>
       </div>
     </div>
@@ -306,18 +317,47 @@
             </div>
         </div>
         <p class="mb-1">&copy; <span id="year"></span> BloodBridge. All Rights Reserved.</p>
-    <p class="mb-1">
-      <a href="AboutUs.html" class="text-white text-decoration-none me-3">About</a>
-      <a href="Privacy.html" class="text-white text-decoration-none me-3">Privacy Policy</a>
-      <a href="Support.html" class="text-white text-decoration-none">Support Us</a>
-    </p>
+    
     <p class="small mb-0">Built by <a href="https://rby122.github.io/Richard-Porfolio-Website/About.html" class="text-white fw-bold">Richard Boakye Yiadom</a></p>
     </div>
 </footer>
 
 
+<!-- Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
 
+<!-- jQuery (optional, only if needed) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+
+<!-- Feather Icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+
+<!-- Custom JS -->
+<script src="/BloodBridgeApp/assets/js/site.js"></script>
+
+<!-- Inline Scripts -->
 <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Activate Feather Icons
+    feather.replace();
+
+    // Accordion toggle logic
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const body = this.nextElementSibling;
+        body.style.display = body.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // Set current year in footer
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  });
+
+  // Optional: Manual toggle function (if used elsewhere)
   function toggleAccordion(header) {
     const item = header.parentElement;
     item.classList.toggle("open");
@@ -325,45 +365,7 @@
 </script>
 
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
-
-<script>feather.replace()</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    feather.replace();
-  });
-
-
-  document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', function() {
-      this.classList.toggle('active');
-      const body = this.nextElementSibling;
-      body.style.display = body.style.display === 'block' ? 'none' : 'block';
-    });
-  });
-
-
-  </script>
-  
-
-</script>
-
-  <script src="~/lib/jquery/dist/jquery.min.js"></script>
-  <script src="~/js/site.js" asp-append-version="true"></script>
-
-  <script>feather.replace()</script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      feather.replace();
-    });
-  </script>
-  </script>
 </body>
 </html>
+
+
