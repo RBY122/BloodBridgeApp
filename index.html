@@ -38,51 +38,53 @@
 
   <!-- Hero Section -->
   <header class="text-center py-5 bg-danger text-white">
-    <h1>Your Blood, Their Lifeline</h1>
-    <p class="lead">Donate hope. Bridge lives.</p>
-    <a href="donate.html" class="btn btn-light btn-lg">Donate Now</a>
+    <h1 class="display-4 fw-bold">Your Blood, Their Lifeline</h1>
+    <p class="lead mb-4">Donate hope. Bridge lives.</p>
+    <a asp-controller="Account" asp-action="SignUp" class="btn btn-warning btn-lg fw-semibold">
+      <i data-feather="heart" class="me-2"></i> Donate Now
+    </a>
   </header>
+  
+<!-- 🌍 Navigation Tiles -->
+<section class="text-center py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center g-4">
 
-  <!-- Impact Section -->
-  <section class="container text-center py-5">
-    <h2>Our Community Impact</h2>
-    <div class="row mt-4">
-      <div class="col-md-3"><h3>2,500+</h3><p>Registered Donors</p></div>
-      <div class="col-md-3"><h3>1,200+</h3><p>Lives Saved</p></div>
-      <div class="col-md-3"><h3>50+</h3><p>Areas Covered</p></div>
-      <div class="col-md-3"><h3>300+</h3><p>Volunteers</p></div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="bg-light py-5">
-    <div class="container">
-      <h2 class="text-center">How BloodBridge Works</h2>
-      <div class="row mt-4">
-        <div class="col-md-4"><h4>Donate</h4><p>Find a blood donation center near you and schedule an appointment.</p></div>
-        <div class="col-md-4"><h4>Save Lives</h4><p>Your donation goes directly to hospitals and emergency cases in need.</p></div>
-        <div class="col-md-4"><h4>Get Updates</h4><p>Receive urgent notifications and donation opportunities in your region.</p></div>
+      <!-- Find Drive -->
+      <div class="col-6 col-md-3">
+        <a href="#" class="text-decoration-none text-dark d-block p-3 bg-white shadow-sm rounded hover-scale">
+          <i data-feather="map-pin" width="32" height="32" class="text-danger mb-2"></i>
+          <div class="fw-semibold">Find Drive</div>
+        </a>
       </div>
-    </div>
-  </section>
 
-  <!-- Facts & Myths -->
-  <section class="container py-5">
-    <h2 class="text-center">Facts & Myths About Blood Donation</h2>
-    <div class="row mt-4">
-      <div class="col-md-6"><strong>Myth:</strong> You can't donate blood if you have a tattoo.<br><strong>Fact:</strong> You can donate after 6–12 months, depending on local guidelines.</div>
-      <div class="col-md-6"><strong>Myth:</strong> Donating blood makes you weak.<br><strong>Fact:</strong> Your body replenishes fluids quickly. With rest and hydration, you'll feel fine.</div>
-    </div>
-  </section>
+      <!-- Alerts -->
+      <div class="col-6 col-md-3">
+        <a href="#" class="text-decoration-none text-dark d-block p-3 bg-white shadow-sm rounded hover-scale">
+          <i data-feather="bell" width="32" height="32" class="text-warning mb-2"></i>
+          <div class="fw-semibold">Alerts</div>
+        </a>
+      </div>
 
-  <!-- Testimonials -->
-  <section class="bg-light py-5">
-    <div class="container text-center">
-      <h2>What Donors Say</h2>
-      <blockquote class="blockquote mt-4">“BloodBridge made donating easy, and I know I saved lives!”<br><footer class="blockquote-footer">Richard B.</footer></blockquote>
-      <blockquote class="blockquote mt-4">“I never knew blood donation was this impactful. Definitely donating again!”<br><footer class="blockquote-footer">Abena M.</footer></blockquote>
+      <!-- Health Tips -->
+      <div class="col-6 col-md-3">
+        <a href="#" class="text-decoration-none text-dark d-block p-3 bg-white shadow-sm rounded hover-scale">
+          <i data-feather="book-open" width="32" height="32" class="text-success mb-2"></i>
+          <div class="fw-semibold">Health Tips</div>
+        </a>
+      </div>
+
+      <!-- Language -->
+      <div class="col-6 col-md-3">
+        <a href="#" class="text-decoration-none text-dark d-block p-3 bg-white shadow-sm rounded hover-scale">
+          <i data-feather="globe" width="32" height="32" class="text-primary mb-2"></i>
+          <div class="fw-semibold">Language</div>
+        </a>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
     <!-- 🌍 Navigation Tiles -->
     <section class="text-center py-5 bg-light">
