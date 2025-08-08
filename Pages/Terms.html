@@ -23,6 +23,9 @@
 </head>
 <body>
 
+  <!-- navigation bar -->
+<div id="navbar"></div>
+
     <!-- ✅ Hero Section -->
     <header class="hero text-center py-5 text-white bloodbridge-hero-bg">
         <h1 class="display-4 fw-bold">Terms and Conditions</h1>
@@ -92,6 +95,14 @@
         </section>
 
     </main>
+
+<script>
+  fetch("Pages/navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
 
 </body>
 </html>
