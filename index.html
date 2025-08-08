@@ -6,6 +6,9 @@
   <title>BloodBridge</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="site.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.css" />
+  <link rel="stylesheet" href="site.js"/>
 </head>
 <body class="bg-light">
 
@@ -302,9 +305,13 @@
                 </div>
             </div>
         </div>
-        <div class="mt-3">
-            <p>&copy; @DateTime.Now.Year BloodBridge. All Rights Reserved.</p>
-        </div>
+        <p class="mb-1">&copy; <span id="year"></span> BloodBridge. All Rights Reserved.</p>
+    <p class="mb-1">
+      <a href="AboutUs.html" class="text-white text-decoration-none me-3">About</a>
+      <a href="Privacy.html" class="text-white text-decoration-none me-3">Privacy Policy</a>
+      <a href="Support.html" class="text-white text-decoration-none">Support Us</a>
+    </p>
+    <p class="small mb-0">Built by <a href="https://rby122.github.io/Richard-Porfolio-Website/About.html" class="text-white fw-bold">Richard Boakye Yiadom</a></p>
     </div>
 </footer>
 
@@ -327,7 +334,36 @@
 
 <script>feather.replace()</script>
 
-@await RenderSectionAsync("Scripts", required: false)
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    feather.replace();
+  });
 
+
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', function() {
+      this.classList.toggle('active');
+      const body = this.nextElementSibling;
+      body.style.display = body.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+
+
+  </script>
+  
+
+</script>
+
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="~/js/site.js" asp-append-version="true"></script>
+
+  <script>feather.replace()</script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      feather.replace();
+    });
+  </script>
+  </script>
 </body>
 </html>
