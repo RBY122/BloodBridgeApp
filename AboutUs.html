@@ -7,20 +7,18 @@
     <meta name="description" content="BloodBridge connects blood donors and recipients efficiently across Ghana." />
     <meta name="author" content="Richard Boakye Yiadom" />
 
-    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon" />
+    <!-- Bootstrap 5 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-..." crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="../../css/site.css" />
-    <link rel="stylesheet" href="../../css/layout.css" />
-    <link rel="stylesheet" href="../../css/dashboard.css" />
-    <link rel="stylesheet" href="../../css/Chartforum.css" />
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-..." crossorigin="anonymous" />
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<!-- Feather Icons -->
+<link rel="icon" type="image/x-icon" href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha384-..." crossorigin="anonymous" />
+
+<!-- Custom Styles -->
+<link rel="stylesheet" href="site.css" />
+
 </head>
 <body>
     
@@ -50,11 +48,16 @@
     </div>
   </nav>
 
-    <!-- ✅ Hero Section -->
-    <header class="hero text-center py-5 text-white bloodbridge-hero-bg">
-        <h1 class="display-4 fw-bold">About BloodBridge</h1>
-        <p class="lead">Unite to Give, Bridge to Heal</p>
-    </header>
+
+ <!-- Hero Section -->
+  <header class="text-center py-5 bg-danger text-white">
+    <h1 class="display-4 fw-bold">About BloodBridge</h1>
+    <p class="lead mb-4">Unite to Give, Bridge to Heal</p>
+    <a href="#" class="btn btn-outline-light me-2">
+      <i data-feather="people" class="me-2"></i> Know Us
+    </a>
+  </header>
+
 
     <main class="container my-5">
 
@@ -67,16 +70,15 @@
                     <!-- Team Member 1 -->
                     <div class="carousel-item active">
                         <div class="d-flex flex-column align-items-center">
-                            <img src="../../images/profile_pic2.jpg" class="rounded-circle shadow" width="150" height="150" alt="John Doe - Lead Developer">
-                            <h4 class="fw-bold mt-3">John Doe</h4>
-                            <h4 class="fw-bold mt-3">Boakye Richard Yiadom</h4>
+                            <img src="assets/profile_pic2.jpg" class="rounded-circle shadow" width="150" height="150" alt="Richard Boakye - Lead Developer">
+                            <h4 class="fw-bold mt-3">Richard Boakye Yiadom</h4>
                             <p class="text-muted">Lead Developer</p>
                         </div>
                     </div>
                     <!-- Team Member 2 -->
                     <div class="carousel-item">
                         <div class="d-flex flex-column align-items-center">
-                            <img src="../../images/profile_pic2.jpg" class="rounded-circle shadow" width="150" height="150" alt="Barnabas - Project Manager">
+                            <img src="assets/profile_pic2.jpg" class="rounded-circle shadow" width="150" height="150" alt="Barnabas - Project Manager">
                             <h4 class="fw-bold mt-3">Barnabas</h4>
                             <p class="text-muted">Project Manager</p>
                         </div>
@@ -84,23 +86,23 @@
                     <!-- Team Member 3 -->
                     <div class="carousel-item">
                         <div class="d-flex flex-column align-items-center">
-                            <img src="../../images/profile_pic2.jpg" class="rounded-circle shadow" width="150" height="150" alt="Happy - UX/UI Designer">
-                            <h4 class="fw-bold mt-3">Happy</h4>
+                            <img src="assets/profile_pic2.jpg" class="rounded-circle shadow" width="150" height="150" alt="Happy - UX/UI Designer">
+                            <h4 class="fw-bold mt-3">Emmanuel Otoo Barfo</h4>
                             <p class="text-muted">UX/UI Designer</p>
                         </div>
                     </div>
                     <!-- Team Member 4 -->
                     <div class="carousel-item">
                         <div class="d-flex flex-column align-items-center">
-                            <img src="../../images/profile_pic2.jpg" class="rounded-circle shadow" width="150" height="150" alt="Emmanuel - Product Manager">
-                            <h4 class="fw-bold mt-3">Emmanuel</h4>
+                            <img src="assets/profile_pic2.jpg" class="rounded-circle shadow" width="150" height="150" alt="Emmanuel - Product Manager">
+                            <h4 class="fw-bold mt-3">Daniel Ofosu</h4>
                             <p class="text-muted">Product Manager</p>
                         </div>
                     </div>
                     <!-- Team Member 5 -->
                     <div class="carousel-item">
                         <div class="d-flex flex-column align-items-center">
-                            <img src="../../images/profile_pic2.jpg" class="rounded-circle shadow" width="150" height="150" alt="Alfred - Data Analyst">
+                            <img src="assets/profile_pic2.jpg" class="rounded-circle shadow" width="150" height="150" alt="Alfred - Data Analyst">
                             <h4 class="fw-bold mt-3">Alfred</h4>
                             <p class="text-muted">Data Analyst</p>
                         </div>
@@ -195,8 +197,102 @@
         </section>
     </main>
 
-    <script>
-      AOS.init();
-    </script>
+
+    <!-- ✅ Footer placed outside container-fluid to prevent overlap -->
+<footer class="footer bg-dark text-white text-center py-3">
+    <div class="container">
+        <div class="row d-flex flex-wrap justify-content-center text-md-start">
+            <div class="col-md-4 mb-3">
+                <h5>About Us</h5>
+                <p>BloodBridge connects blood donors with recipients efficiently.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Useful Links</h5>
+                <nav>
+                    <ul class="list-unstyled">
+                        <li><a class="text-white opacity-75" href="AboutUs.html">About Us</a></li>
+                        <li><a class="text-white opacity-75" href="Privacy.html">Privacy Policy</a></li>
+                        <li><a class="text-white opacity-75" href="Support.html">Support Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="col-md-4 mb-3">
+                <h5>Get in Touch</h5>
+                <p><i data-feather="map-pin"></i> Kumasi, Ghana</p>
+                <p><i data-feather="phone"></i> <a class="text-white opacity-75" href="tel:+2330596833199">+233 059 683 3199</a></p>
+                <p><i data-feather="mail"></i> <a class="text-white opacity-75" href="mailto:richardboakye1710@gmail.com">richardboakye1710@gmail.com</a></p>
+                <!-- Optional Socials -->
+                <div class="mt-2">
+
+                   <!-- 🌐 Social Media Links -->
+<a href="https://facebook.com/YourProfile" target="_blank" rel="noopener" class="text-white" aria-label="Facebook">
+  <i data-feather="facebook"></i>
+</a>
+
+<a href="https://wa.me/233596833199" target="_blank" rel="noopener" class="text-white" aria-label="WhatsApp">
+  <i data-feather="message-circle"></i>
+</a>
+
+<a href="https://x.com/YourProfile" target="_blank" rel="noopener" class="text-white" aria-label="X (formerly Twitter)">
+  <i data-feather="twitter"></i>
+</a>
+
+<a href="https://instagram.com/YourProfile" target="_blank" rel="noopener" class="text-white" aria-label="Instagram">
+  <i data-feather="instagram"></i>
+</a>
+
+                </div>
+            </div>
+        </div>
+        <p class="mb-1">&copy; <span id="year"></span> BloodBridge. All Rights Reserved.</p>
+    
+    <p class="small mb-0">Built by <a href="https://rby122.github.io/Richard-Porfolio-Website/About.html" class="text-white fw-bold">Richard Boakye Yiadom</a></p>
+    </div>
+</footer>
+
+
+<!-- Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+
+<!-- jQuery (optional, only if needed) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+
+<!-- Feather Icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+
+<!-- Custom JS -->
+<script src="/BloodBridgeApp/assets/js/site.js"></script>
+
+<!-- Inline Scripts -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Activate Feather Icons
+    feather.replace();
+
+    // Accordion toggle logic
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const body = this.nextElementSibling;
+        body.style.display = body.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // Set current year in footer
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  });
+
+  // Optional: Manual toggle function (if used elsewhere)
+  function toggleAccordion(header) {
+    const item = header.parentElement;
+    item.classList.toggle("open");
+  }
+</script>
+
 </body>
 </html>
