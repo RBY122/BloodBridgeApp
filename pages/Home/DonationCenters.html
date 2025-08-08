@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donation Centers - BloodBridge</title>
+    <meta name="description" content="BloodBridge connects blood donors and recipients efficiently across Ghana." />
+    <meta name="author" content="Richard Boakye Yiadom" />
+    
+
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/site.css" />
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/dashboard.css" />
+    <link rel="stylesheet" href="../../css/Chartforum.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="../../js/site.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">BloodBridge</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-danger text-white text-center py-5">
+        <div class="container">
+            <h1>Find a Donation Center Near You</h1>
+            <p>Join the mission to save lives through blood donation.</p>
+        </div>
+    </header>
+
+    <!-- Search & Filter Section -->
+    <section class="container my-4">
+        <div class="row">
+            <div class="col-md-6 mb-2 mb-md-0">
+                <input type="text" class="form-control" placeholder="Search donation centers..." aria-label="Search donation centers">
+            </div>
+            <div class="col-md-6">
+                <select class="form-select" aria-label="Filter donation centers">
+                    <option selected>Filter by Location</option>
+                    <option>Accra</option>
+                    <option>Kumasi</option>
+                    <option>Tamale</option>
+                    <option>Takoradi</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Centers List -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Red Cross Center</h5>
+                        <p class="card-text">Location: Accra, Ghana</p>
+                        <p class="card-text">Hours: Mon-Fri, 9 AM - 5 PM</p>
+                        <a href="#" class="btn btn-danger">Donate Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Lifeline Blood Bank</h5>
+                        <p class="card-text">Location: Kumasi, Ghana</p>
+                        <p class="card-text">Hours: Mon-Sat, 8 AM - 6 PM</p>
+                        <a href="#" class="btn btn-danger">Donate Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more donation centers as needed -->
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="text-center bg-light py-4">
+        <h2>Become a Lifesaver Today</h2>
+        <p>Sign up to donate blood and help save lives.</p>
+        <a href="../../pages/Account/SignUp.html" class="btn btn-danger">Sign Up</a>
+    </section>
+
+   
+</body>
+</html>

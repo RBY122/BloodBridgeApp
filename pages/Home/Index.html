@@ -1,74 +1,72 @@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BloodBridge</title>
+    <title>Home Page - BloodBridge</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="../../css/site.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="../../js/site.js"></script>
 </head>
 
 <body>
     <!-- ✅ Hero Section -->
-<header class="hero text-center py-5 text-white" style="background: var(--gradient-bg);">
-  <h1 class="display-4 fw-bold">Your Blood, Their Lifeline</h1>
-  <p class="lead mb-4">Donate hope. Bridge lives.</p>
-  <a asp-controller="Account" asp-action="SignUp" class="btn btn-warning btn-lg fw-semibold">
-    <i data-feather="heart" class="me-2"></i> Donate Now
-  </a>
-</header>
+    <header class="hero text-center py-5 text-white bloodbridge-hero-bg">
+      <h1 class="display-4 fw-bold">Your Blood, Their Lifeline</h1>
+      <p class="lead mb-4">Donate hope. Bridge lives.</p>
+      <a href="../Account/SignUp.html" class="btn btn-warning btn-lg fw-semibold">
+        <i data-feather="heart" class="me-2"></i> Donate Now
+      </a>
+    </header>
 
-<!-- 🌍 Navigation Tiles -->
-<section class="text-center py-5 bg-light">
-  <div class="container">
-    <div class="row justify-content-center g-4">
+    <!-- 🌍 Navigation Tiles -->
+    <section class="text-center py-5 bg-light">
+      <div class="container">
+        <div class="row justify-content-center g-4">
 
-      <!-- Find Drive -->
-      <div class="col-6 col-md-3">
-        <a href="#" class="text-decoration-none text-dark d-block p-3 bg-white shadow-sm rounded hover-scale">
-          <i data-feather="map-pin" width="32" height="32" class="text-danger mb-2"></i>
-          <div class="fw-semibold">Find Drive</div>
-        </a>
+          <!-- Find Drive -->
+          <div class="col-6 col-md-3">
+            <a href="#" class="text-decoration-none text-dark d-block p-3 bg-white shadow-sm rounded hover-scale">
+              <i data-feather="map-pin" width="32" height="32" class="text-danger mb-2"></i>
+              <div class="fw-semibold">Find Drive</div>
+            </a>
+          </div>
+
+          <!-- Alerts -->
+          <div class="col-6 col-md-3">
+            <a href="#" class="text-decoration-none text-dark d-block p-3 bg-white shadow-sm rounded hover-scale">
+              <i data-feather="bell" width="32" height="32" class="text-warning mb-2"></i>
+              <div class="fw-semibold">Alerts</div>
+            </a>
+          </div>
+
+          <!-- Health Tips -->
+          <div class="col-6 col-md-3">
+            <a href="#" class="text-decoration-none text-dark d-block p-3 bg-white shadow-sm rounded hover-scale">
+              <i data-feather="book-open" width="32" height="32" class="text-success mb-2"></i>
+              <div class="fw-semibold">Health Tips</div>
+            </a>
+          </div>
+
+          <!-- Language -->
+          <div class="col-6 col-md-3">
+            <a href="#" class="text-decoration-none text-dark d-block p-3 bg-white shadow-sm rounded hover-scale">
+              <i data-feather="globe" width="32" height="32" class="text-primary mb-2"></i>
+              <div class="fw-semibold">Language</div>
+            </a>
+          </div>
+
+        </div>
       </div>
-
-      <!-- Alerts -->
-      <div class="col-6 col-md-3">
-        <a href="#" class="text-decoration-none text-dark d-block p-3 bg-white shadow-sm rounded hover-scale">
-          <i data-feather="bell" width="32" height="32" class="text-warning mb-2"></i>
-          <div class="fw-semibold">Alerts</div>
-        </a>
-      </div>
-
-      <!-- Health Tips -->
-      <div class="col-6 col-md-3">
-        <a href="#" class="text-decoration-none text-dark d-block p-3 bg-white shadow-sm rounded hover-scale">
-          <i data-feather="book-open" width="32" height="32" class="text-success mb-2"></i>
-          <div class="fw-semibold">Health Tips</div>
-        </a>
-      </div>
-
-      <!-- Language -->
-      <div class="col-6 col-md-3">
-        <a href="#" class="text-decoration-none text-dark d-block p-3 bg-white shadow-sm rounded hover-scale">
-          <i data-feather="globe" width="32" height="32" class="text-primary mb-2"></i>
-          <div class="fw-semibold">Language</div>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <!-- 🩸 Main Content -->
     <main class="container my-5">
@@ -83,7 +81,7 @@
         <div class="text-success mb-2">
           <i data-feather="users" width="32" height="32"></i>
         </div>
-        <h3 class="fw-bold text-success">@Model?.TotalDonors<span>+</span></h3>
+        <h3 class="fw-bold text-success">2,500<span>+</span></h3>
         <p class="mb-0">Registered Donors</p>
       </div>
     </div>
@@ -94,7 +92,7 @@
         <div class="text-primary mb-2">
           <i data-feather="activity" width="32" height="32"></i>
         </div>
-        <h3 class="fw-bold text-primary">@Model?.TotalLivesSaved<span>+</span></h3>
+        <h3 class="fw-bold text-primary">1,200<span>+</span></h3>
         <p class="mb-0">Lives Saved</p>
       </div>
     </div>
@@ -105,7 +103,7 @@
         <div class="text-warning mb-2">
           <i data-feather="map-pin" width="32" height="32"></i>
         </div>
-        <h3 class="fw-bold text-warning">@Model?.TotalAreasCovered<span>+</span></h3>
+        <h3 class="fw-bold text-warning">50<span>+</span></h3>
         <p class="mb-0">Areas Covered</p>
       </div>
     </div>
@@ -116,7 +114,7 @@
         <div class="text-danger mb-2">
           <i data-feather="heart" width="32" height="32"></i>
         </div>
-        <h3 class="fw-bold text-danger">@Model?.TotalVolunteers<span>+</span></h3>
+        <h3 class="fw-bold text-danger">300<span>+</span></h3>
         <p class="mb-0">Volunteers Supporting Us</p>
       </div>
     </div>
@@ -124,12 +122,11 @@
   </div>
 </section>
 
-
         <!-- ✅ Call to Action -->
         <section class="text-center my-5 p-4 bg-light rounded">
             <h2 class="text-danger fw-bold">Your Donation Saves Lives</h2>
             <p>Every two seconds, someone needs blood. Your donation could be the difference between life and death.</p>
-            <a asp-controller="Account" asp-action="SignUp" class="btn btn-outline-danger btn-lg">
+            <a href="../Account/SignUp.html" class="btn btn-outline-danger btn-lg">
                 Become a Blood Donor Today
             </a>
         </section>
@@ -174,9 +171,6 @@
   </div>
 </section>
 
-
-
-
    <section class="myth-fact-accordion my-5">
   <h2 class="text-center text-danger fw-bold mb-4">Facts & Myths About Blood Donation</h2>
 
@@ -202,7 +196,7 @@
     </div>
   </div>
 
-<div class="accordion-item">
+  <div class="accordion-item">
     <div class="accordion-header" onclick="toggleAccordion(this)">
       <i class="fas fa-exclamation-circle text-danger me-2"></i> Myth: Donating blood makes you weak.
       <span class="toggle-icon">+</span>
@@ -223,14 +217,8 @@
       <strong>Fact:</strong> Your body quickly replenishes the fluids lost. With rest and hydration, you'll feel fine.
     </div>
   </div>
-
-
-
   <!-- Add more pairs as needed -->
 </section>
-
-
-
 
         <!-- ✅ Testimonials -->
         <section class="my-5 text-center">
@@ -240,14 +228,13 @@
                 <footer class="blockquote-footer">Richard B.</footer>
             </blockquote>
             <blockquote class="blockquote">
-                <p>"I never knew blood donation was this impactful. Donating again!"</p>
+                <p>"I never knew blood donation was this impactful. Definitely donating again!"</p>
                 <footer class="blockquote-footer">Abena M.</footer>
             </blockquote>
         </section>
     </main>
 
     <script>feather.replace()</script>
-
 
 <script>
   function toggleAccordion(header) {
@@ -256,7 +243,16 @@
   }
 </script>
 
-
+<footer class="bg-danger text-white text-center py-3 mt-5">
+  <div class="container">
+    <small>
+      &copy; 2025 BloodBridge &middot; 
+      <a href="../About.html" class="text-white text-decoration-underline">About</a> &middot; 
+      <a href="../Contact.html" class="text-white text-decoration-underline">Contact</a> &middot; 
+      <a href="../Terms.html" class="text-white text-decoration-underline">Terms</a>
+    </small>
+  </div>
+</footer>
 
 </body>
 </html>

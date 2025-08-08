@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule Appointment - BloodBridge</title>
+    <meta name="description" content="BloodBridge connects blood donors and recipients efficiently across Ghana." />
+    <meta name="author" content="Richard Boakye Yiadom" />
+    
+
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/site.css" />
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/dashboard.css" />
+    <link rel="stylesheet" href="../../css/Chartforum.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="text-center text-danger">Schedule an Appointment</h2>
+
+                <!-- ✅ Success & Error Messages -->
+                <div id="successMessage" class="alert alert-success fade show text-center d-none" role="alert">
+                    Appointment scheduled successfully!
+                </div>
+                <div id="errorMessage" class="alert alert-danger fade show text-center d-none" role="alert">
+                    Please fill all required fields.
+                </div>
+
+                <!-- ✅ Appointment Form -->
+                <form id="appointmentForm" autocomplete="off">
+                    <!-- ✅ Select Date & Time -->
+                    <div class="mb-3">
+                        <label for="appointmentDate" class="form-label">Select Date & Time</label>
+                        <input type="datetime-local" class="form-control" id="appointmentDate" name="AppointmentDate" required />
+                        <span id="dateError" class="text-danger d-none">⚠️ Please select a valid date and time.</span>
+                    </div>
+
+                    <!-- ✅ Select Blood Type -->
+                    <div class="mb-3">
+                        <label for="bloodType" class="form-label">Select Blood Type</label>
+                        <select class="form-select" id="bloodType" name="BloodType" required>
+                            <option value="">-- Choose Blood Type --</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+
+                    <!-- ✅ Select Hospital -->
+                    <div class="mb-3">
+                        <label for="hospitalId" class="form-label fw-bold">Select Hospital</label>
+                        <select class="form-select" id="hospitalId" name="HospitalId" required>
+                            <option value="" selected disabled>-- Choose Hospital --</option>
+                            <option value="1">Korle Bu Teaching Hospital</option>
+                            <option value="2">Komfo Anokye Teaching Hospital</option>
+                            <option value="3">37 Military Hospital</option>
+                            <option value="4">Tamale Teaching Hospital</option>
+                        </select>
+                        <span id="hospitalError" class="text-danger d-none">⚠️ Hospital selection is required.</span>
+                    </div>
+
+                    <!-- ✅ Preview Appointment -->
+                    <button type="button" class="btn btn-danger w-100 py-2" data-bs-toggle="modal" data-bs-target="#appointmentSummary">
+                        Preview Appointment
+                    </button>
+
+                    <!-- ✅ Confirmation Modal -->
+                    <div class="modal fade" id="appointmentSummary" tabindex="-1" aria-labelledby="appointmentSummaryLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="appointmentSummaryLabel">Confirm Appointment</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p><strong>Date & Time:</strong> <span id="summaryDate"></span></p>
+                                    <p><strong>Blood Type:</strong> <span id="summaryBloodType"></span></p>
+                                    <p><strong>Hospital:</strong> <span id="summaryHospital"></span></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary w-100" id="confirmAppointmentBtn">Confirm Appointment</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- ✅ Reschedule & Cancel Options -->
+                <div class="text-center mt-4">
+                    <button class="btn btn-outline-danger" id="rescheduleBtn" type="button">Reschedule</button>
+                    <button class="btn btn-outline-secondary" id="cancelBtn" type="button">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("appointmentForm");
+            const appointmentDate = document.getElementById("appointmentDate");
+            const hospitalId = document.getElementById("hospitalId");
+            const bloodType = document.getElementById("bloodType");
+
+            const dateError = document.getElementById("dateError");
+            const hospitalError = document.getElementById("hospitalError");
+            const successMessage = document.getElementById("successMessage");
+            const errorMessage = document.getElementById("errorMessage");
+
+            // Update summary when user fills inputs
+            function updateSummary() {
+                document.getElementById("summaryDate").textContent = appointmentDate.value;
+                document.getElementById("summaryBloodType").textContent = bloodType.value;
+                document.getElementById("summaryHospital").textContent = hospitalId.options[hospitalId.selectedIndex]?.text || "";
+            }
+            appointmentDate.addEventListener("change", updateSummary);
+            bloodType.addEventListener("change", updateSummary);
+            hospitalId.addEventListener("change", updateSummary);
+
+            // Preview button opens modal and updates summary
+            document.querySelector('[data-bs-target="#appointmentSummary"]').addEventListener("click", function () {
+                updateSummary();
+            });
+
+            // Confirm Appointment button in modal
+            document.getElementById("confirmAppointmentBtn").addEventListener("click", function (event) {
+                event.preventDefault();
+                let hasErrors = false;
+
+                if (!appointmentDate.value) {
+                    dateError.classList.remove("d-none");
+                    hasErrors = true;
+                } else {
+                    dateError.classList.add("d-none");
+                }
+
+                if (!hospitalId.value) {
+                    hospitalError.classList.remove("d-none");
+                    hasErrors = true;
+                } else {
+                    hospitalError.classList.add("d-none");
+                }
+
+                if (hasErrors) {
+                    errorMessage.classList.remove("d-none");
+                    successMessage.classList.add("d-none");
+                } else {
+                    errorMessage.classList.add("d-none");
+                    successMessage.classList.remove("d-none");
+                    // Hide modal after success
+                    setTimeout(() => {
+                        var modal = bootstrap.Modal.getInstance(document.getElementById('appointmentSummary'));
+                        modal.hide();
+                        form.reset();
+                    }, 1500);
+                }
+            });
+
+            // Reschedule and Cancel buttons
+            document.getElementById("rescheduleBtn").addEventListener("click", function () {
+                form.reset();
+                successMessage.classList.add("d-none");
+                errorMessage.classList.add("d-none");
+            });
+            document.getElementById("cancelBtn").addEventListener("click", function () {
+                form.reset();
+                successMessage.classList.add("d-none");
+                errorMessage.classList.add("d-none");
+            });
+        });
+    </script>
+
+</body>
+</html>
+

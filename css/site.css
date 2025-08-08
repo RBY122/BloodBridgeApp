@@ -1,4 +1,4 @@
-: root {
+root {
     --primary-color: #b30000; /* Urgency-driven crimson */
     --hover-color: #920000; /* Darker red for hover */
     --accent-color: #ffcc00; /* Bright yellow highlights */
@@ -444,4 +444,23 @@ html, body {
 /* Counter Animations */
 .counter {
   display: inline-block;
+}
+
+.bloodbridge-hero-bg {
+    background: var(--gradient-bg, linear-gradient(90deg, #b30000 0%, #ff6666 100%));
+}
+
+.bg-faint {
+    background: #f8f9fa;
+}
+.forgot-password-container {
+    max-width: 400px;
+}
+
+.reset-password-container {
+    max-width: 400px;
+}
+
+.support-desc {
+    max-width: 700px;
 }

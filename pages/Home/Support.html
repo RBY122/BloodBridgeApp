@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <!-- 🔍 Metadata -->
-    <meta name="description" content=" BloodBridge connects blood donors and recipients efficiently across Ghana." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support BloodBridge</title>
+    <meta name="description" content="BloodBridge connects blood donors and recipients efficiently across Ghana." />
     <meta name="author" content="Richard Boakye Yiadom" />
-    <meta name="theme-color" content="#b30000" />
 
-    <!-- 🧠 Favicon -->
-    <link rel="icon" href="~/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon" />
 
-    <!-- 🎨 Stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/dashboard.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/Chartforum.css" asp-append-version="true" />
+    <link rel="stylesheet" href="../../css/site.css" />
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/dashboard.css" />
+    <link rel="stylesheet" href="../../css/Chartforum.css" />
 
-    <!-- ⚡ External Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-
-    <!-- 💡 Custom Scripts -->
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="../../js/site.js"></script>
 </head>
 <body>
 <!-- ✅ Hero Section -->
-<header class="hero text-center py-5 text-white" style="background: var(--gradient-bg);">
+<header class="hero text-center py-5 text-white bloodbridge-hero-bg">
   <h1 class="display-4 fw-bold">Support BloodBridge</h1>
   <p class="lead">Your contributions save lives. Be part of the change today!</p>
 </header>
@@ -37,7 +33,7 @@
   <!-- ❤️ Why Support Us -->
   <section class="text-center py-5">
     <h2 class="text-danger fw-bold">Why Support Us?</h2>
-    <p class="mx-auto" style="max-width: 700px;">
+    <p class="mx-auto support-desc">
       BloodBridge is committed to creating a seamless, life-saving blood donation platform. Your support enables us to expand reach, build innovative features, and keep the system reliable—so that no life is delayed waiting for blood.
     </p>
   </section>
@@ -54,7 +50,7 @@
           <i class="fas fa-hand-holding-heart fa-3x text-danger mb-3"></i>
           <h4 class="fw-bold">Financial Contribution</h4>
           <p class="text-muted">Support development, hosting, and life-saving campaign outreach.</p>
-          <a href="/donate" class="btn btn-danger"><i class="fas fa-donate me-1"></i> Donate Now</a>
+          <a href="../Dashboard/Donation.html" class="btn btn-danger"><i class="fas fa-donate me-1"></i> Donate Now</a>
         </div>
       </div>
 
@@ -64,7 +60,7 @@
           <i class="fas fa-users fa-3x text-warning mb-3"></i>
           <h4 class="fw-bold">Volunteer</h4>
           <p class="text-muted">Lend a hand at donation drives and community awareness campaigns.</p>
-          <a href="/volunteer" class="btn btn-warning text-white"><i class="fas fa-handshake me-1"></i> Join Us</a>
+          <a href="../Dashboard/Appointment.html" class="btn btn-warning text-white"><i class="fas fa-handshake me-1"></i> Join Us</a>
         </div>
       </div>
 
@@ -74,7 +70,7 @@
           <i class="fas fa-bullhorn fa-3x text-primary mb-3"></i>
           <h4 class="fw-bold">Spread Awareness</h4>
           <p class="text-muted">Amplify our mission—online and in your community.</p>
-          <a href="/social-media" class="btn btn-primary"><i class="fas fa-share-alt me-1"></i> Follow & Share</a>
+          <a href="https://twitter.com/bloodbridge" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-share-alt me-1"></i> Follow & Share</a>
         </div>
       </div>
     </div>
@@ -83,21 +79,16 @@
   <!-- 🎯 Final Call-to-Action -->
   <div class="text-center mt-5">
     <p class="lead mb-4">Every act of support moves us closer to saving another life.</p>
-    <a asp-controller="Dashboard" asp-action="Donation" class="btn btn-danger btn-lg me-2">
+    <a href="../Dashboard/Donation.html" class="btn btn-danger btn-lg me-2">
       <i class="fas fa-donate me-1"></i> Donate Now
     </a>
-    <a asp-controller="Dashboard" asp-action="Appointment" class="btn btn-outline-danger btn-lg">
+    <a href="../Dashboard/Appointment.html" class="btn btn-outline-danger btn-lg">
       <i class="fas fa-handshake me-1"></i> Volunteer
     </a>
   </div>
 
 </main>
 
-
-
- 
-
-  <script>feather.replace()</script>
-
+<script>feather.replace()</script>
 </body>
 </html>

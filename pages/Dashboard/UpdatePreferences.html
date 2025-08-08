@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Preferences - BloodBridge</title>
+    <meta name="description" content="BloodBridge connects blood donors and recipients efficiently across Ghana." />
+    <meta name="author" content="Richard Boakye Yiadom" />
+    
+
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/site.css" />
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/dashboard.css" />
+    <link rel="stylesheet" href="../../css/Chartforum.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">BloodBridge</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-primary text-white text-center py-4">
+        <div class="container">
+            <h1>Welcome, John Doe</h1>
+            <p>Manage your preferences to customize your experience</p>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        <div class="row">
+            <!-- Profile Settings -->
+            <div class="col-md-6">
+                <h3>Profile Settings</h3>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label" for="profileName">Name</label>
+                        <input type="text" class="form-control" id="profileName" placeholder="Enter your name" value="John Doe">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="profileEmail">Email</label>
+                        <input type="email" class="form-control" id="profileEmail" placeholder="Enter your email" value="johndoe@email.com">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+
+            <!-- Notification Preferences -->
+            <div class="col-md-6">
+                <h3>Notification Preferences</h3>
+                <form>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                        <label class="form-check-label" for="emailNotifications">Receive email notifications</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="smsNotifications">
+                        <label class="form-check-label" for="smsNotifications">Receive SMS alerts</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Update Preferences</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <!-- Donation History -->
+            <div class="col-md-6">
+                <h3>Donation History</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Red Cross Center - 15 Jan 2025</li>
+                    <li class="list-group-item">Lifeline Blood Bank - 28 Feb 2025</li>
+                </ul>
+            </div>
+
+            <!-- Privacy & Security -->
+            <div class="col-md-6">
+                <h3>Privacy & Security</h3>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label" for="newPassword">Change Password</label>
+                        <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="twoFactor">
+                        <label class="form-check-label" for="twoFactor">Enable Two-Factor Authentication</label>
+                    </div>
+                    <button type="submit" class="btn btn-danger mt-3">Update Security Settings</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <!-- Theme & Accessibility -->
+            <div class="col-md-12">
+                <h3>Theme & Accessibility</h3>
+                <form>
+                    <label for="themeSelect" class="form-label">Choose Theme</label>
+                    <select class="form-select" id="themeSelect">
+                        <option>Light Mode</option>
+                        <option>Dark Mode</option>
+                    </select>
+                    <button type="submit" class="btn btn-secondary mt-3">Apply Settings</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
