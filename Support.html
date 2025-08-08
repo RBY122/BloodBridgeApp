@@ -7,19 +7,18 @@
     <meta name="description" content="BloodBridge connects blood donors and recipients efficiently across Ghana." />
     <meta name="author" content="Richard Boakye Yiadom" />
 
-    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon" />
+  <!-- Bootstrap 5 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-..." crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="../../css/site.css" />
-    <link rel="stylesheet" href="../../css/layout.css" />
-    <link rel="stylesheet" href="../../css/dashboard.css" />
-    <link rel="stylesheet" href="../../css/Chartforum.css" />
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-..." crossorigin="anonymous" />
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="../../js/site.js"></script>
+<!-- Feather Icons -->
+<link rel="icon" type="image/x-icon" href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha384-..." crossorigin="anonymous" />
+
+<!-- Custom Styles -->
+<link rel="stylesheet" href="site.css" />
+
 </head>
 
 <body>
@@ -44,8 +43,8 @@
         <li class="nav-item"><a class="nav-link text-white" href="Privacy.html">Privacy</a></li>
         </ul>
         <div class="d-flex">
-          <a href="/signup.html" class="btn btn-outline-light me-2">Sign Up</a>
-          <a href="/signin.html" class="btn btn-light">Sign In</a>
+          <a href="SignUp.html" class="btn btn-outline-light me-2">Sign Up</a>
+          <a href="SignIn.html" class="btn btn-light">Sign In</a>
         </div>
       </div>
     </div>
@@ -56,7 +55,7 @@
   <header class="text-center py-5 bg-danger text-white">
     <h1 class="display-4 fw-bold">Support BloodBridge</h1>
     <p class="lead mb-4">Your contributions save lives. Be part of the change today!</p>
-    <a asp-controller="Account" asp-action="SignUp" class="btn btn-warning btn-lg fw-semibold">
+    <a href="SignUp.html" class="btn btn-outline-light me-2">
       <i data-feather="heart" class="me-2"></i> Support Now
     </a>
   </header>
@@ -85,7 +84,7 @@
           <i class="fas fa-hand-holding-heart fa-3x text-danger mb-3"></i>
           <h4 class="fw-bold">Financial Contribution</h4>
           <p class="text-muted">Support development, hosting, and life-saving campaign outreach.</p>
-          <a href="../Dashboard/Donation.html" class="btn btn-danger"><i class="fas fa-donate me-1"></i> Donate Now</a>
+          <a href="Donation.html" class="btn btn-danger"><i class="fas fa-donate me-1"></i> Donate Now</a>
         </div>
       </div>
 
@@ -95,7 +94,7 @@
           <i class="fas fa-users fa-3x text-warning mb-3"></i>
           <h4 class="fw-bold">Volunteer</h4>
           <p class="text-muted">Lend a hand at donation drives and community awareness campaigns.</p>
-          <a href="../Dashboard/Appointment.html" class="btn btn-warning text-white"><i class="fas fa-handshake me-1"></i> Join Us</a>
+          <a href="Appointment.html" class="btn btn-warning text-white"><i class="fas fa-handshake me-1"></i> Join Us</a>
         </div>
       </div>
 
@@ -105,7 +104,7 @@
           <i class="fas fa-bullhorn fa-3x text-primary mb-3"></i>
           <h4 class="fw-bold">Spread Awareness</h4>
           <p class="text-muted">Amplify our mission—online and in your community.</p>
-          <a href="https://twitter.com/bloodbridge" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-share-alt me-1"></i> Follow & Share</a>
+          <a href="https://twitter.com/...." class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-share-alt me-1"></i> Follow & Share</a>
         </div>
       </div>
     </div>
@@ -114,16 +113,112 @@
   <!-- 🎯 Final Call-to-Action -->
   <div class="text-center mt-5">
     <p class="lead mb-4">Every act of support moves us closer to saving another life.</p>
-    <a href="../Dashboard/Donation.html" class="btn btn-danger btn-lg me-2">
+    <a href="Donation.html" class="btn btn-danger btn-lg me-2">
       <i class="fas fa-donate me-1"></i> Donate Now
     </a>
-    <a href="../Dashboard/Appointment.html" class="btn btn-outline-danger btn-lg">
+    <a href="Appointment.html" class="btn btn-outline-danger btn-lg">
       <i class="fas fa-handshake me-1"></i> Volunteer
     </a>
   </div>
 
 </main>
 
-<script>feather.replace()</script>
+
+    <!-- ✅ Footer placed outside container-fluid to prevent overlap -->
+<footer class="footer bg-dark text-white text-center py-3">
+    <div class="container">
+        <div class="row d-flex flex-wrap justify-content-center text-md-start">
+            <div class="col-md-4 mb-3">
+                <h5>About Us</h5>
+                <p>BloodBridge connects blood donors with recipients efficiently.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Useful Links</h5>
+                <nav>
+                    <ul class="list-unstyled">
+                        <li><a class="text-white opacity-75" href="AboutUs.html">About</a></li>
+                        <li><a class="text-white opacity-75" href="Privacy.html">Privacy Policy</a></li>
+                        <li><a class="text-white opacity-75" href="Support.html">Support Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="col-md-4 mb-3">
+                <h5>Get in Touch</h5>
+                <p><i data-feather="map-pin"></i> Kumasi, Ghana</p>
+                <p><i data-feather="phone"></i> <a class="text-white opacity-75" href="tel:+2330596833199">+233 059 683 3199</a></p>
+                <p><i data-feather="mail"></i> <a class="text-white opacity-75" href="mailto:richardboakye1710@gmail.com">richardboakye1710@gmail.com</a></p>
+                <!-- Optional Socials -->
+                <div class="mt-2">
+
+                   <!-- 🌐 Social Media Links -->
+<a href="https://facebook.com/YourProfile" target="_blank" rel="noopener" class="text-white" aria-label="Facebook">
+  <i data-feather="facebook"></i>
+</a>
+
+<a href="https://wa.me/233596833199" target="_blank" rel="noopener" class="text-white" aria-label="WhatsApp">
+  <i data-feather="message-circle"></i>
+</a>
+
+<a href="https://x.com/YourProfile" target="_blank" rel="noopener" class="text-white" aria-label="X (formerly Twitter)">
+  <i data-feather="twitter"></i>
+</a>
+
+<a href="https://instagram.com/YourProfile" target="_blank" rel="noopener" class="text-white" aria-label="Instagram">
+  <i data-feather="instagram"></i>
+</a>
+
+                </div>
+            </div>
+        </div>
+        <p class="mb-1">&copy; <span id="year"></span> BloodBridge. All Rights Reserved.</p>
+    
+    <p class="small mb-0">Built by <a href="https://rby122.github.io/Richard-Porfolio-Website/About.html" class="text-white fw-bold">Richard Boakye Yiadom</a></p>
+    </div>
+</footer>
+
+
+<!-- Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+
+<!-- jQuery (optional, only if needed) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+
+<!-- Feather Icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+
+<!-- Custom JS -->
+<script src="/BloodBridgeApp/assets/js/site.js"></script>
+
+<!-- Inline Scripts -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Activate Feather Icons
+    feather.replace();
+
+    // Accordion toggle logic
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const body = this.nextElementSibling;
+        body.style.display = body.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // Set current year in footer
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  });
+
+  // Optional: Manual toggle function (if used elsewhere)
+  function toggleAccordion(header) {
+    const item = header.parentElement;
+    item.classList.toggle("open");
+  }
+</script>
+
 </body>
 </html>
