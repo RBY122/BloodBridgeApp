@@ -4,68 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BloodBridge</title>
-
-  <!-- Styles -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-  <link rel="stylesheet" href="~/css/dashboard.css" asp-append-version="true" />
-
-  <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/feather-icons"></script>
-  <script src="~/js/site.js"></script>
-
-  <!-- Favicon -->
-  <link rel="icon" href="~/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body class="bg-light">
+
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">BloodBridge</a>
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+        <img src="images/logo.jpg" alt="BloodBridge Logo" width="40" class="me-2" />
+        BloodBridge
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse bg-light shadow-sm" id="navbarNav">
-        <a class="navbar-brand" href="index.html">
-          <img src="images/logo.jpg" alt="BloodBridge Logo" width="40" />
-        </a>
-        <ul class="navbar-nav me-auto ms-3">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="support.html">Support Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="privacy.html">Privacy Policy</a>
-          </li>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="support.html">Support Us</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="privacy.html">Privacy Policy</a></li>
         </ul>
-        <div class="d-flex align-items-center">
-          <a href="signup.html" class="btn btn-outline-danger me-2">Sign Up</a>
-          <a href="signin.html" class="btn btn-danger">Sign In</a>
+        <div class="d-flex">
+          <a href="signup.html" class="btn btn-outline-light me-2">Sign Up</a>
+          <a href="signin.html" class="btn btn-light">Sign In</a>
         </div>
       </div>
     </div>
   </nav>
-</body>
 
-   
-    <!-- ✅ Hero Section -->
-    <header class="hero text-center py-5 text-white bloodbridge-hero-bg">
-      <h1 class="display-4 fw-bold">Your Blood, Their Lifeline</h1>
-      <p class="lead mb-4">Donate hope. Bridge lives.</p>
-      <a href="../Account/SignUp.html" class="btn btn-warning btn-lg fw-semibold">
-        <i data-feather="heart" class="me-2"></i> Donate Now
-      </a>
-    </header>
+  <!-- Hero Section -->
+  <header class="text-center py-5 bg-danger text-white">
+    <h1>Your Blood, Their Lifeline</h1>
+    <p class="lead">Donate hope. Bridge lives.</p>
+    <a href="donate.html" class="btn btn-light btn-lg">Donate Now</a>
+  </header>
+
+  <!-- Impact Section -->
+  <section class="container text-center py-5">
+    <h2>Our Community Impact</h2>
+    <div class="row mt-4">
+      <div class="col-md-3"><h3>2,500+</h3><p>Registered Donors</p></div>
+      <div class="col-md-3"><h3>1,200+</h3><p>Lives Saved</p></div>
+      <div class="col-md-3"><h3>50+</h3><p>Areas Covered</p></div>
+      <div class="col-md-3"><h3>300+</h3><p>Volunteers</p></div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center">How BloodBridge Works</h2>
+      <div class="row mt-4">
+        <div class="col-md-4"><h4>Donate</h4><p>Find a blood donation center near you and schedule an appointment.</p></div>
+        <div class="col-md-4"><h4>Save Lives</h4><p>Your donation goes directly to hospitals and emergency cases in need.</p></div>
+        <div class="col-md-4"><h4>Get Updates</h4><p>Receive urgent notifications and donation opportunities in your region.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facts & Myths -->
+  <section class="container py-5">
+    <h2 class="text-center">Facts & Myths About Blood Donation</h2>
+    <div class="row mt-4">
+      <div class="col-md-6"><strong>Myth:</strong> You can't donate blood if you have a tattoo.<br><strong>Fact:</strong> You can donate after 6–12 months, depending on local guidelines.</div>
+      <div class="col-md-6"><strong>Myth:</strong> Donating blood makes you weak.<br><strong>Fact:</strong> Your body replenishes fluids quickly. With rest and hydration, you'll feel fine.</div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-light py-5">
+    <div class="container text-center">
+      <h2>What Donors Say</h2>
+      <blockquote class="blockquote mt-4">“BloodBridge made donating easy, and I know I saved lives!”<br><footer class="blockquote-footer">Richard B.</footer></blockquote>
+      <blockquote class="blockquote mt-4">“I never knew blood donation was this impactful. Definitely donating again!”<br><footer class="blockquote-footer">Abena M.</footer></blockquote>
+    </div>
+  </section>
 
     <!-- 🌍 Navigation Tiles -->
     <section class="text-center py-5 bg-light">
