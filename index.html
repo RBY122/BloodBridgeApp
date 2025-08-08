@@ -20,66 +20,56 @@
   <!-- Favicon -->
   <link rel="icon" href="~/images/favicon.ico" type="image/x-icon" />
 </head>
+
+
 <body class="bg-light">
   <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">BloodBridge</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      <a class="navbar-brand fw-bold" href="index.html">BloodBridge</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                    <img src="~/images/logo.jpg" alt="BloodBridge Logo" width="40" />
-                </a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm w-100">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.jpg" alt="BloodBridge Logo" width="40" />
+          </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavInner"
+            aria-controls="navbarNavInner" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Support">Support Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="AboutUs">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
-                        </li>
-                    </ul>
-                    <div class="d-flex align-items-center">
-                        @if (User.Identity?.IsAuthenticated == true)
-                        {
-                            <span class="navbar-text me-2">Welcome, @User.Identity.Name</span>
-                            <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
-                                @Html.AntiForgeryToken()
-                                <button type="submit" class="btn btn-danger">Log Out</button>
-                            </form>
-                        }
-                        else
-                        {
-                            <a asp-controller="Account" asp-action="SignUp" class="btn btn-outline-danger me-2">Sign Up</a>
-                            <a asp-controller="Account" asp-action="SignIn" class="btn btn-danger">Sign In</a>
-                        }
-                    </div>
-                </div>
+          <div class="collapse navbar-collapse" id="navbarNavInner">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="support.html">Support Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="privacy.html">Privacy Policy</a>
+              </li>
+            </ul>
+            <div class="d-flex align-items-center">
+              <a href="signup.html" class="btn btn-outline-danger me-2">Sign Up</a>
+              <a href="signin.html" class="btn btn-danger">Sign In</a>
             </div>
-        </nav>
+          </div>
+        </div>
+      </nav>
     </div>
-  </div>
-</nav>
-   
+  </nav>
+</body>
 
-<body>
+   
     <!-- ✅ Hero Section -->
     <header class="hero text-center py-5 text-white bloodbridge-hero-bg">
       <h1 class="display-4 fw-bold">Your Blood, Their Lifeline</h1>
