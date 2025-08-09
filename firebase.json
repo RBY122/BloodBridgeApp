@@ -14,13 +14,14 @@
     ]
   },
   "firestore": {
-    "database": "(default)",
-    "location": "africa-south1",
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
   "database": {
     "rules": "database.rules.json"
+  },
+  "functions": {
+    "source": "functions"
   },
   "emulators": {
     "singleProjectMode": true,
@@ -33,43 +34,11 @@
     "firestore": {
       "port": 8080
     },
-    "storage": {
-      "port": 9199
-    },
     "auth": {
       "port": 9099
-    },
-    "apphosting": {
-      "port": 4000,
-      "startCommand": "npm run dev",
-      "rootDirectory": "./"
-    },
-    "dataconnect": {
-      "dataDir": "dataconnect/.dataconnect/pgliteData",
-      "port": 9399
     },
     "database": {
       "port": 9000
     }
-  },
-  "dataconnect": {
-    "source": "dataconnect"
-  },
-  "functions": [
-    {
-      "source": "functions",
-      "codebase": "default",
-      "ignore": [
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log",
-        "*.local"
-      ],
-      "predeploy": [
-        
-      ]
-    }
-  ]
-  
+  }
 }
