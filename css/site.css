@@ -1,457 +1,77 @@
-root {
-    --primary-color: #b30000; /* Urgency-driven crimson */
-    --hover-color: #920000; /* Darker red for hover */
-    --accent-color: #ffcc00; /* Bright yellow highlights */
-    --background-light: #f8f8f8; /* Soft neutral */
-    --text-color: #333;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --gradient-bg: linear-gradient(45deg, #b30000, #ff0000);
-    --transition-speed: 0.3s ease-in-out;
+:root {
+  --primary: #b30000;
+  --primary-hover: #920000;
+  --accent: #ffcc00;
+  --bg-light: #f8f8f8;
+  --text: #333;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --gradient: linear-gradient(45deg, #b30000, #ff0000);
+  --transition: 0.3s ease-in-out;
 }
 
+/* Global Transitions */
+* {
+  transition: var(--transition);
+}
 
+/* Dark Mode */
+.dark-mode {
+  --bg-light: #121212;
+  --text: #fff;
+}
+
+/* Body Styling */
+body {
+  margin-top: 70px;
+  padding-bottom: 80px;
+  overflow-y: auto;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text);
+  animation: fadeIn var(--transition);
+}
+
+/* Fixed Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+/* Navbar Branding */
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  background: var(--gradient);
+  padding: 12px 24px;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
+
+/* Carousel Transitions */
 .carousel-item {
-    /* Increase the transition duration to, say, 3 seconds */
-    transition: transform 3s ease-in-out, opacity 3s ease-in-out;
+  transition: transform 3s ease-in-out, opacity 3s ease-in-out;
 }
 
+/* Carousel Controls */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  /* Use a solid dark circular background with some opacity */
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 50%;
-  
-  /* Optionally, adjust the size or use a filter to invert the default icon */
   width: 40px;
   height: 40px;
-  /* Invert colors if needed */
   filter: invert(1);
-}
-
-/* Optionally, add a little shadow for depth */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* Increase button size on hover for better user feedback */
+/* Hover Feedback */
 .carousel-control-prev:hover .carousel-control-prev-icon,
 .carousel-control-next:hover .carousel-control-next-icon {
   transform: scale(1.1);
   transition: transform 0.3s ease;
-}
-
-
-/* 🌟 Smooth Global Transitions */
-* {
-    transition: var(--transition-speed);
-}
-
-/* 🌙 Dark Mode Support */
-.dark-mode {
-    --background-light: #121212;
-    --text-color: white;
-}
-
-/* 🔥 Fixed Navbar Styling */
-.navbar {
-    position: fixed; /* ✅ Keeps navbar fixed at the top */
-    top: 0;
-    left: 0;
-    width: 100%; /* ✅ Ensures full-width display */
-    z-index: 1000; /* ✅ Keeps it above all other elements */
-    box-shadow: var(--shadow); /* ✅ Adds slight shadow for elevation */
-}
-
-/* 📌 Adjust Body for Fixed Navbar */
-body {
-    margin-top: 70px; /* ✅ Adjusts for fixed navbar height */
-    padding-bottom: 80px; /* ✅ Creates space for the fixed footer */
-    overflow-y: auto; /* ✅ Enables scrolling without affecting the navbar */
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--background-light);
-    color: var(--text-color);
-    animation: fadeIn var(--transition-speed);
-}
-
-/* 🔥 Navbar Branding */
-.navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    background: var(--gradient-bg);
-    padding: 12px 24px;
-    border-radius: 6px;
-    box-shadow: var(--shadow);
-}
-
-
-
-/* 🎨 Smooth Fade-in Animation */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-/* 📌 Dark Mode Active Page Highlight */
-.dark-mode .nav-item.active .nav-link {
-    background-color: rgba(255, 255, 255, 0.2); /* ✅ Improved contrast */
-    color: var(--accent-color);
-}
-
-/* 🩸 Call-to-Action Buttons */
-.btn-primary {
-    background: var(--gradient-bg);
-    color: white;
-    padding: 12px 18px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px;
-    border: none;
-    box-shadow: var(--shadow);
-    transition: transform 0.25s ease-in-out, background var(--transition-speed);
-}
-
-.btn-primary:hover {
-    background: var(--hover-color);
-    transform: scale(1.05); /* ✅ Slightly reduced scale for smoother effect */
-}
-
-/* 🔥 Animated Blood Drop */
-.blood-drop {
-    width: 50px;
-    height: 50px;
-    background: var(--accent-color);
-    border-radius: 50%;
-    animation: dropAnimation 2s infinite ease-in-out; /* ✅ Smoother transition */
-}
-
-@keyframes dropAnimation {
-    0%, 100% { transform: translateY(-6px); opacity: 0.85; }
-    50% { transform: translateY(0); opacity: 1; }
-}
-
-/* 🩸 Appointment Card */
-.appointment-card {
-    background: white;
-    border-left: 6px solid var(--primary-color);
-    padding: 20px;
-    margin: 20px auto;
-    box-shadow: var(--shadow);
-}
-
-/* 🚀 Alerts for Success & Errors */
-.alert-success {
-    background-color: #dff0d8;
-    border-left: 6px solid #28a745;
-    animation: fadeIn 0.5s ease-in-out; /* ✅ Faster visibility */
-}
-
-.alert-danger {
-    background-color: #f8d7da;
-    border-left: 6px solid #dc3545;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* 🎨 Blood Type Badge */
-.blood-badge {
-    display: inline-block;
-    padding: 8px 12px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 6px;
-    background: var(--accent-color);
-    color: var(--primary-color);
-    transition: transform 0.25s ease-in-out;
-}
-
-.blood-badge:hover {
-    transform: scale(1.05); /* ✅ Slight expansion on hover */
-}
-
-/* 📲 Mobile Responsiveness */
-@media (max-width: 768px) {
-    body { font-size: 16px; }
-    .btn-primary { font-size: 16px; padding: 10px 15px; }
-}
-
-/* 🚀 Subtle Fade-in Effect */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* 🩸 Profile Styling */
-.profile-container {
-    max-width: 320px;
-    margin: auto;
-    padding: 16px;
-    text-align: center;
-}
-
-.profile-container h2 {
-    font-size: 26px;
-    font-weight: bold;
-}
-
-.profile-container p {
-    font-size: 17px;
-}
-
-.profile-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: var(--shadow);
-}
-
-/* 🔥 Sidebar Structure */
-.sidebar {
-    position: fixed;
-    top: 60px; /* ✅ Stays below navbar */
-    left: 0;
-    width: 60px;
-    height: 100vh; /* ✅ Full height now */
-    background-color: var(--primary-color);
-    color: white;
-    z-index: 50; /* ✅ Maintains layering visibility */
-    transition: width var(--transition-speed);
-    box-shadow: var(--shadow);
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-/* ✅ Footer Has Higher Priority */
-html, body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-/* 📌 Main Content Adjustments */
-.main-content {
-    flex: 1;
-    margin-left: 60px; /* ✅ Reduced gap for better alignment */
-    padding: 20px; /* ✅ Ensures balanced spacing */
-    transition: margin-left var(--transition-speed);
-}
-
-/* 🚀 Sidebar Expansion */
-.sidebar:hover {
-    width: 220px;
-}
-
-.sidebar:hover ~ .main-content {
-    margin-left: 200px; /* ✅ Fine-tuned sidebar expansion width */
-}
-
-/* 📌 Fixed Footer */
-.footer {
-    position: sticky;
-    z-index: 100;
-    width: 100%;
-    background-color: var(--background-dark);
-    padding: 15px;
-    text-align: center;
-}
-
-/* 🎨 Sidebar Navigation */
-.sidebar .nav-link {
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 12px 16px;
-    transition: background-color var(--transition-speed), transform 0.2s linear;
-}
-
-/* 🎨 Sidebar Link Hover */
-.sidebar .nav-link:hover {
-    background-color: var(--hover-color);
-    border-radius: 6px;
-}
-
-/* 🖼 Sidebar Icons */
-.sidebar-icon {
-    width: 24px;
-    height: 24px;
-}
-
-/* 🔄 Sidebar Text (Expands on Hover) */
-.sidebar-text {
-    display: none;
-    margin-left: 12px;
-    transition: opacity var(--transition-speed);
-}
-
-.sidebar:hover .sidebar-text {
-    display: inline-block;
-    opacity: 1;
-}
-
-/* 📌 Navbar Priority */
-.navbar {
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-
-/* 📲 Mobile-Friendly Sidebar */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    .sidebar .nav-item {
-        text-align: center;
-    }
-
-    .main-content {
-        margin-left: 50px; /* ✅ Adjusted for mobile alignment */
-        transition: margin-left var(--transition-speed);
-    }
-
-    .sidebar:hover ~ .main-content {
-        margin-left: 180px; /* ✅ Prevents excessive shifting */
-    }
-}
-
-.logo-animate img {
-    height: 40px;
-    transition: transform 0.4s ease-in-out, filter 0.3s;
-    animation: pulseLogo 3s infinite alternate;
-}
-
-.logo-animate:hover img {
-    transform: rotate(10deg) scale(1.1);
-    filter: brightness(1.2);
-}
-
-@keyframes pulseLogo {
-    from { transform: scale(1); }
-    to { transform: scale(1.05); }
-}
-
-.myth-fact-accordion {
-  max-width: 700px;
-  margin: 0 auto;
-  font-family: sans-serif;
-}
-
-.accordion-item {
-  border: 1px solid #ddd;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.accordion-header {
-  background-color: #f8f9fa;
-  padding: 15px 20px;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.accordion-body {
-  display: none;
-  padding: 15px 20px;
-  background-color: #eafaf1;
-  color: #155724;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.toggle-icon {
-  font-size: 20px;
-  transition: transform 0.3s;
-}
-
-.accordion-item.open .accordion-body {
-  display: block;
-}
-
-.accordion-item.open .toggle-icon {
-  transform: rotate(45deg); /* changes + to x */
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-
-.myth-fact-accordion {
-  max-width: 750px;
-  margin: 0 auto;
-  font-family: sans-serif;
-}
-
-.accordion-item {
-  border: 1px solid #ddd;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.accordion-header {
-  background-color: #f8f9fa;
-  padding: 15px 20px;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.accordion-body {
-  display: none;
-  padding: 15px 20px;
-  background-color: #eafaf1;
-  color: #155724;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.toggle-icon {
-  font-size: 22px;
-  transition: transform 0.3s ease;
-}
-
-.accordion-item.open .accordion-body {
-  display: block;
-}
-
-.accordion-item.open .toggle-icon {
-  transform: rotate(45deg);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Counter Animations */
-.counter {
-  display: inline-block;
-}
-
-.bloodbridge-hero-bg {
-    background: var(--gradient-bg, linear-gradient(90deg, #b30000 0%, #ff6666 100%));
-}
-
-.bg-faint {
-    background: #f8f9fa;
-}
-.forgot-password-container {
-    max-width: 400px;
-}
-
-.reset-password-container {
-    max-width: 400px;
-}
-
-.support-desc {
-    max-width: 700px;
 }
