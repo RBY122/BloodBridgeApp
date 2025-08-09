@@ -1,0 +1,33 @@
+{
+  "hosting": {
+    "public": "pages",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      { "source": "../Pages/About", "destination": "../Pages/About.html" },
+      { "source": "../Pages/Support", "destination": "../Pages/Support.html" },
+      { "source": "../Pages/SignUp", "destination": "../Pages/Login.html" },
+      { "source": "../Pages/SignIn", "destination": "../Pages/signup.html" },
+      { "source": "../Pages/dashboard", "destination": "../Pages/dashboard.html" },
+      { "source": "../Pages/profile", "destination": "../Pages/profile.html" },
+      { "source": "../Pages/donations", "destination": "../Pages/donations.html" },
+      { "source": "../Pages/events", "destination": "../Pages/events.html" },
+      { "source": "/", "destination": "../index.html" }
+    ],
+    "cleanUrls": true,
+    "headers": [
+      {
+        "source": "**/*.@(js|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=31536000"
+          }
+        ]
+      }
+    ]
+  }
+}
