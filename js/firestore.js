@@ -1,22 +1,97 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+// firebase.js (modular and GitHub Pages–friendly)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
 
+// Firebase config
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  projectId: "YOUR_PROJECT_ID",
-  ...
+  apiKey: "AIzaSyCkxDJflIGlrABXe65TUA9Mr2tIClDMxH0",
+  authDomain: "bloodbridge-3f25e.firebaseapp.com",
+  projectId: "bloodbridge-3f25e",
+  storageBucket: "bloodbridge-3f25e.appspot.com",
+  messagingSenderId: "192881021185",
+  appId: "1:192881021185:web:503c5a3c1afb6b1c2b0b00",
+  measurementId: "G-GCGJR69LNL"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
+getAnalytics(app);
 
-// Example: Add a donation
-export async function addDonation(data) {
-  await addDoc(collection(db, "donations"), data);
+// 🔧 Format Firestore Timestamp
+const formatDate = (timestamp) => {
+  if (!timestamp) return "--";
+  const date = timestamp.toDate ? timestamp.toDate() : timestamp;
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric", month: "short", day: "numeric"
+  });
+};
+
+// 🧠 Auth State Listener for Dashboard
+onAuthStateChanged(auth, async (user) => {
+  if (!user) {
+    setTimeout(() => {
+      window.location.href = "/pages/Login.html";
+    }, 150);
+    return;
+  }
+
+  try {
+    const userRef = doc(db, "users", user.uid);
+    const userSnap = await getDoc(userRef);
+
+    if (!userSnap.exists()) {
+      showAlert("User data not found.", "danger");
+      return;
+    }
+
+    const data = userSnap.data();
+    const fields = {
+      fullName: data.fullName,
+      email: data.email,
+      phoneNumber: data.phoneNumber || "Not Provided",
+      bloodGroup: data.bloodGroup || "Unknown",
+      dob: formatDate(data.dateOfBirth),
+      nationalId: data.nationalIdNumber || "N/A",
+      emergencyName: data.emergencyContactName || "N/A",
+      emergencyPhone: data.emergencyContactPhone || "N/A",
+      nextDonation: formatDate(data.nextDonationDate),
+      tipNextDonation: formatDate(data.nextDonationDate),
+      lastDonation: formatDate(data.lastDonationDate),
+      nextAppointment: formatDate(data.nextAppointment),
+      profilePercent: `${data.profileCompletion || 0}%`
+    };
+
+    Object.entries(fields).forEach(([id, value]) => setText(id, value));
+
+    const progressBar = document.getElementById("profileProgressBar");
+    if (progressBar) {
+      const percent = data.profileCompletion || 0;
+      progressBar.style.width = `${percent}%`;
+      progressBar.textContent = `${percent}%`;
+    }
+  } catch (err) {
+    showAlert("Something went wrong while loading your profile.", "danger");
+    console.error(err);
+  }
+});
+
+// 🧩 Utility Functions
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value;
 }
 
-// Example: Fetch donors
-export async function getDonors() {
-  const snapshot = await getDocs(collection(db, "donors"));
-  return snapshot.docs.map(doc => doc.data());
+function showAlert(message, type = "success") {
+  const alertBox = document.getElementById("alertBox");
+  if (alertBox) {
+    alertBox.className = `alert alert-${type}`;
+    alertBox.textContent = message;
+    alertBox.classList.remove("d-none");
+  }
 }
+
+export { auth, db, formatDate };
