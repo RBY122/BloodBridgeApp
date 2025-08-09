@@ -14,8 +14,6 @@
     ]
   },
   "firestore": {
-    "database": "(default)",
-    "location": "africa-south1",
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
@@ -23,13 +21,13 @@
     "rules": "storage.rules"
   },
   "emulators": {
-    "hosting": {
-      "port": 5000
-    },
+    "singleProjectMode": true,
     "ui": {
       "enabled": true
     },
-    "singleProjectMode": true,
+    "hosting": {
+      "port": 5000
+    },
     "firestore": {
       "port": 8080
     },

@@ -1,36 +1,42 @@
-// firebase.js (modular and GitHub Pages–friendly)
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+// 🔥 Firebase Core Imports
+import { initializeApp } from "firebase/app";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { getAnalytics } from "firebase/analytics";
+import { getStorage, connectStorageEmulator } from "firebase/storage";
 
-// Firebase config
+// 🛠 Firebase Config
 const firebaseConfig = {
-  apiKey: "AIzaSyCkxDJflIGlrABXe65TUA9Mr2tIClDMxH0",
-  authDomain: "bloodbridge-3f25e.firebaseapp.com",
+  apiKey: "your-api-key",
+  authDomain: "your-project.firebaseapp.com",
   projectId: "bloodbridge-3f25e",
   storageBucket: "bloodbridge-3f25e.appspot.com",
-  messagingSenderId: "192881021185",
-  appId: "1:192881021185:web:503c5a3c1afb6b1c2b0b00",
-  measurementId: "G-GCGJR69LNL"
+  messagingSenderId: "your-sender-id",
+  appId: "your-app-id"
 };
 
-// Initialize Firebase
+// 🚀 Initialize Firebase Services
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 const auth = getAuth(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
 getAnalytics(app);
 
-// 🔧 Format Firestore Timestamp
+// 🧪 Connect to Firebase Storage Emulator (Local Dev Only)
+connectStorageEmulator(storage, "127.0.0.1", 9199);
+
+// 📅 Format Firestore Timestamp
 const formatDate = (timestamp) => {
   if (!timestamp) return "--";
   const date = timestamp.toDate ? timestamp.toDate() : timestamp;
   return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric", month: "short", day: "numeric"
+    year: "numeric",
+    month: "short",
+    day: "numeric"
   });
 };
 
-// 🧠 Auth State Listener for Dashboard
+// 👤 Auth State Listener for Dashboard
 onAuthStateChanged(auth, async (user) => {
   if (!user) {
     setTimeout(() => {
@@ -94,4 +100,5 @@ function showAlert(message, type = "success") {
   }
 }
 
+// 📦 Export for External Use
 export { auth, db, formatDate };
