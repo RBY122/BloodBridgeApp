@@ -1,7 +1,9 @@
 {
   "projects": {
     "default": "bloodbridgeapp-c1134",
-    "staging": "bloodbridgeapp-c1134"
+    "staging": "bloodbridgeapp-c1134",
+    "spark": "bloodbridgeapp-c1134",
+    "bloodbridge": "bloodbridgeapp-c1134"
   },
   "targets": {},
   "etags": {}
