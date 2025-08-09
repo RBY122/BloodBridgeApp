@@ -247,62 +247,9 @@
         </section>
     </main>
 
-    
 
-
-    <!-- ✅ Footer placed outside container-fluid to prevent overlap -->
-<footer class="footer bg-dark text-white text-center py-3">
-    <div class="container">
-        <div class="row d-flex flex-wrap justify-content-center text-md-start">
-            <div class="col-md-4 mb-3">
-                <h5>About Us</h5>
-                <p>BloodBridge connects blood donors with recipients efficiently.</p>
-            </div>
-            <div class="col-md-4 mb-3">
-                <h5>Useful Links</h5>
-                <nav>
-                    <ul class="list-unstyled">
-                        <li><a class="text-white opacity-75" href="AboutUs.html">About Us</a></li>
-                        <li><a class="text-white opacity-75" href="Privacy.html">Privacy Policy</a></li>
-                        <li><a class="text-white opacity-75" href="Support.html">Support Us</a></li>
-                    </ul>
-                </nav>
-            </div>
-            
-            <!-- Contact Info -->
-            <div class="col-md-4 mb-3">
-                <h5>Get in Touch</h5>
-                <p><i data-feather="map-pin"></i> Kumasi, Ghana</p>
-                <p><i data-feather="phone"></i> <a class="text-white opacity-75" href="tel:+2330596833199">+233 059 683 3199</a></p>
-                <p><i data-feather="mail"></i> <a class="text-white opacity-75" href="mailto:richardboakye1710@gmail.com">richardboakye1710@gmail.com</a></p>
-                <!-- Optional Socials -->
-                <div class="mt-2">
-
-                   <!-- 🌐 Social Media Links -->
-<a href="https://facebook.com/YourProfile" target="_blank" rel="noopener" class="text-white" aria-label="Facebook">
-  <i data-feather="facebook"></i>
-</a>
-
-<a href="https://wa.me/233596833199" target="_blank" rel="noopener" class="text-white" aria-label="WhatsApp">
-  <i data-feather="message-circle"></i>
-</a>
-
-<a href="https://x.com/YourProfile" target="_blank" rel="noopener" class="text-white" aria-label="X (formerly Twitter)">
-  <i data-feather="twitter"></i>
-</a>
-
-<a href="https://instagram.com/YourProfile" target="_blank" rel="noopener" class="text-white" aria-label="Instagram">
-  <i data-feather="instagram"></i>
-</a>
-
-                </div>
-            </div>
-        </div>
-        <p class="mb-1">&copy; <span id="year"></span> BloodBridge. All Rights Reserved.</p>
-    
-    <p class="small mb-0">Built by <a href="https://rby122.github.io/Richard-Porfolio-Website/About.html" class="text-white fw-bold">Richard Boakye Yiadom</a></p>
-    </div>
-</footer>
+<!-- footer -->
+<div id="footer"></div>
 
 
 <!-- Bootstrap Bundle (includes Popper) -->
@@ -353,6 +300,15 @@
       document.getElementById("navbar").innerHTML = data;
     });
 </script>
+
+<script>
+  fetch("Pages/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
 
 
 </body>
