@@ -16,6 +16,7 @@
   "firestore": {
     "database": "(default)",
     "location": "africa-south1",
+    "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
   "database": {
@@ -40,7 +41,37 @@
     },
     "apphosting": {
       "port": 4000,
-      "startCommand": "npm run dev"
+      "startCommand": "npm run dev",
+      "rootDirectory": "./"
+    },
+    "dataconnect": {
+      "dataDir": "dataconnect/.dataconnect/pgliteData",
+      "port": 9399
+    },
+    "database": {
+      "port": 9000
     }
+  },
+  "dataconnect": {
+    "source": "dataconnect"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
+      ]
+    }
+  ],
+  "storage": {
+    "rules": "storage.rules"
   }
 }

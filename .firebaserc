@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "bloodbridge-3f25e"
-  }
+    "default": "bloodbridgeapp-c1134",
+    "staging": "bloodbridgeapp-c1134"
+  },
+  "targets": {},
+  "etags": {}
 }
