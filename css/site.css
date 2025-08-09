@@ -61,7 +61,6 @@ root {
     left: 0;
     width: 100%; /* ✅ Ensures full-width display */
     z-index: 1000; /* ✅ Keeps it above all other elements */
-    background-color: var(--background-light);
     box-shadow: var(--shadow); /* ✅ Adds slight shadow for elevation */
 }
 
@@ -87,15 +86,7 @@ body {
     box-shadow: var(--shadow);
 }
 
-/* 📌 Active Page Highlight */
-.nav-item.active .nav-link {
-    font-weight: bold;
-    text-decoration: underline;
-    background-color: rgba(179, 0, 0, 0.3);
-    color: var(--accent-color);
-    border-radius: 6px;
-    box-shadow: var(--shadow);
-}
+
 
 /* 🎨 Smooth Fade-in Animation */
 @keyframes fadeIn {
