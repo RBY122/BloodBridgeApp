@@ -1,33 +1,40 @@
 {
   "hosting": {
-    "public": "pages",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
     "rewrites": [
-      { "source": "../Pages/About", "destination": "../Pages/About.html" },
-      { "source": "../Pages/Support", "destination": "../Pages/Support.html" },
-      { "source": "../Pages/SignUp", "destination": "../Pages/Login.html" },
-      { "source": "../Pages/SignIn", "destination": "../Pages/signup.html" },
-      { "source": "../Pages/dashboard", "destination": "../Pages/dashboard.html" },
-      { "source": "../Pages/profile", "destination": "../Pages/profile.html" },
-      { "source": "../Pages/donations", "destination": "../Pages/donations.html" },
-      { "source": "../Pages/events", "destination": "../Pages/events.html" },
-      { "source": "/", "destination": "../index.html" }
-    ],
-    "cleanUrls": true,
-    "headers": [
       {
-        "source": "**/*.@(js|css)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public,max-age=31536000"
-          }
-        ]
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
+  },
+  "firestore": {
+    "database": "(default)",
+    "location": "africa-south1",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true,
+    "firestore": {
+      "port": 8080
+    },
+    "storage": {
+      "port": 9199
+    }
   }
 }
